@@ -1,0 +1,26 @@
+.western{
+    width: 100%;
+ ul{
+    display: flex; 
+    list-style: none;
+    height: 45px;
+    line-height: 45px; 
+    li{
+        flex: 1;
+        text-align: center;
+        .active{
+            border-bottom: 3px solid #fe6e00;
+            color: #fe6e00;
+            display: block;
+        }
+        a{
+            color: #6a6a6a;
+        }
+    }
+} 
+}
+.western{
+ul{
+    border-bottom: 1px solid #fe6e00
+}
+}

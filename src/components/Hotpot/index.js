@@ -1,8 +1,8 @@
 import React ,{Component} from "react";
-
+import "./index.scss"
 class Hotpot extends Component{
     render(){
-        return <div>
+        return <div className="hotpot">
 
 
             Hotpot

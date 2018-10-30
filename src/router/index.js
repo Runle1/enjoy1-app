@@ -28,7 +28,7 @@ const router = (
                 }/>
                 <Route path="/sidebar" component={Sidebar}/>
                 <Route path="/navbar" component={Navbar}/>
-                {/* <Redirect from = "*" to="/home"/> */}
+                <Redirect from = "*" to="/home"/>
                 </Switch>
         </App>
     </Router>

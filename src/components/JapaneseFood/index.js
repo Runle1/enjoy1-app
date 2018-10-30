@@ -1,8 +1,8 @@
 import React ,{Component} from "react";
-
+import "./index.scss"
 class JapaneseFood extends Component{
     render(){
-        return <div>
+        return <div className="japaneseFood">
 
 
             JapaneseFood
