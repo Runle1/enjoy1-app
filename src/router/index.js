@@ -9,6 +9,9 @@ import Sidebar from "../components/Sidebar"
 import Navbar from "../components/Navbar"
 import Intelligentsorting from "../components/Western/Intelligentsorting"
 import All from "../components/Western/All"
+import Quanbu from "../components/JapaneseFood/Quanbu";
+import Zhineng from "../components/JapaneseFood/Zhineng";
+import Detail from "../components/Detail";
 
 const router = (
     <Router>
@@ -16,7 +19,15 @@ const router = (
                 <Switch>
                 <Route path="/home" component={Home}/>
                 <Route path="/hotpot" component={Hotpot}/>
-                <Route path="/japaneseFood" component={JapaneseFood}/>
+                <Route path="/japaneseFood" render={()=>
+                    <JapaneseFood>
+                        <Switch>
+                            <Route path="/japaneseFood/quanbu" component={Quanbu}></Route>
+                            <Route path="/japaneseFood/zhineng" component={Zhineng}></Route>
+                            <Redirect from="/japaneseFood" to="/japaneseFood/quanbu"/>
+                        </Switch>
+                    </JapaneseFood>
+                }/>
                 <Route path="/western" render={()=>
                     <Western>
                         <Switch>
@@ -28,6 +39,7 @@ const router = (
                 }/>
                 <Route path="/sidebar" component={Sidebar}/>
                 <Route path="/navbar" component={Navbar}/>
+                <Route path="/detail/:myid" component={Detail}></Route>
                 <Redirect from = "*" to="/home"/>
                 </Switch>
         </App>

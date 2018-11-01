@@ -1,0 +1,49 @@
+.home{
+    width: 100%;
+    overflow: hidden;
+.carousel{
+    width:100%;
+    height: 200px;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+ }
+ header{
+    .a{
+        .title{
+            float: left;
+            padding: 20px;
+            h3{
+                margin-top: 10px;
+            }
+            p{
+                color: #ff3939;
+                font-size: 13px;
+                float: left;
+            }
+        }
+        dl{
+            width: 100%;
+            padding: 20px;
+            dt{
+                img{
+                    width: 90%;
+                }
+            }
+            dd{
+               float: left; 
+               margin-top:20px;
+               p:nth-child(1){
+                font-size: 16px;
+               }
+               p:nth-child(2){
+                   float: left;
+                   color: #92969c;
+                   font-size: 13px;
+               }
+            }
+        }
+    } 
+ }
+}

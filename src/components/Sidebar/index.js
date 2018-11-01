@@ -7,7 +7,7 @@ class Sidebar extends Component{
             <div className="bendi">
                 <p>本地餐厅</p>
                 <ul className="wf" onClick={this.props.event}>
-                    <li><NavLink to="/western">西餐</NavLink></li>
+                    <li><NavLink to="/western/all">西餐</NavLink></li>
                     <li><NavLink to="/hotpot">中国菜</NavLink></li>
                     <li><NavLink to="/japaneseFood">日本料理</NavLink></li>
                     <li><NavLink to="/japaneseFood">咖啡甜点</NavLink></li>
@@ -46,7 +46,6 @@ class Sidebar extends Component{
                     <li>&nbsp;</li>
                 </ul>
             </div>
-
         </div>
     }
 }

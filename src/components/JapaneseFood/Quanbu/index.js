@@ -1,26 +1,26 @@
 import React ,{Component} from "react";
 import "./index.scss"
-import axios from "axios"
-class All extends Component{
+import Axios from "axios";
+class Quanbu extends Component{
     constructor(props){
         super(props);
-        this.state = {
-            westernlist:[]
-        }
+        this.state = ({
+            alllist:[]
+        })
     }
     componentDidMount(){
-        axios.get("/4/tab/category_product_list.json?category_id=7&sort=1&from_id=0&city_id=140&page=0").then(res=>{
+        Axios.get("/4/tab/category_product_list.json?category_id=9&sort=1&from_id=0&city_id=104&page=0").then(res=>{
             console.log(res.data);
             this.setState({
-                westernlist:res.data
+                alllist:res.data
             })
         })
     }
     render(){
-        return <div className="all">
+        return <div className="quanbu">
             <div>
                {
-                   this.state.westernlist.map(item=>
+                   this.state.alllist.map(item=>
                     <dl>
                         <dt>
                             <img src={item.product_image}/>
@@ -35,9 +35,8 @@ class All extends Component{
                     )
                }
             </div>
-
         </div>
     }
 }
 
-export default All;
+export default Quanbu;
