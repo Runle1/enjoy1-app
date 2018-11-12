@@ -32,13 +32,15 @@
                 }
             }
             dd{
-               float: left; 
-               margin-top:20px;
+               text-align: left;
+               margin-top:10px;
                p:nth-child(1){
+                width: 100%;
                 font-size: 16px;
+                display: block;
                }
                p:nth-child(2){
-                   float: left;
+                   width: 100%;
                    color: #92969c;
                    font-size: 13px;
                }

@@ -7,19 +7,27 @@ class Home extends Component{
         super(props);
         this.state = {
             looplist:[],
-            imglooplist:[]
+            imglooplist:[],
+            hotpotlist:[]
         }
     }
     componentDidMount(){
         axios.get("/hub/home/v1/web/week_choice.json?city_id=140&page=0").then(res=>{
             console.log(res.data);
-            console.log(res.data[0]);
-            console.log(res.data[0].tabs);
+            // console.log(res.data[0]);
+            // console.log(res.data[0].tabs);
             this.setState({
                 looplist:res.data,
                 imglooplist:res.data[0].tabs
             })
+            console.log(this.props);
+        });
 
+        axios.get("/4/tab/category_product_list.json?category_id=5&sort=1&from_id=0&city_id=140&page=0").then(res=>{
+            console.log(res.data);
+            this.setState({
+                hotpotlist:res.data
+            })
         })
     }
     render(){
@@ -40,8 +48,8 @@ class Home extends Component{
                             <p>{item.group_section.desc}</p>  
                             </div>
                             {
-                                this.state.imglooplist.map(item=>
-                                    <dl>
+                               item.tabs.map(item=>
+                                    <dl onClick={this.handleClick.bind(this,item.id)}>
                                     <dt><img src={item.url} key={item.id} alt="home"/></dt>
                                     <dd>
                                         <p>{item.title}</p>
@@ -49,14 +57,30 @@ class Home extends Component{
                                     </dd>
                                 </dl>
                                     )
-                            }1
+                            }
                         </div>
                         )
                 }
+                {
+                this.state.hotpotlist.map(item=>
+                    <dl key={item.product_id} onClick={this.handleClick1.bind(this,item.product_id)}>
+                    </dl>
+                    
+                    )
+            } 
             </header>
             
        </div>
     }
+    handleClick(id){
+        console.log(this.props)
+        this.props.history.push("/homedetail/" + id);
+    }
+    handleClick1(id){
+        console.log(this.props)
+        this.props.history.push("/homedetail/" + id);
+    }
+    
 }
 
 

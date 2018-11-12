@@ -12,6 +12,7 @@ import All from "../components/Western/All"
 import Quanbu from "../components/JapaneseFood/Quanbu";
 import Zhineng from "../components/JapaneseFood/Zhineng";
 import Detail from "../components/Detail";
+import HomeDetail from "../components/HomeDetail";
 
 const router = (
     <Router>
@@ -40,6 +41,7 @@ const router = (
                 <Route path="/sidebar" component={Sidebar}/>
                 <Route path="/navbar" component={Navbar}/>
                 <Route path="/detail/:myid" component={Detail}></Route>
+                <Route path="/homedetail/:homeid" component={HomeDetail}></Route>
                 <Redirect from = "*" to="/home"/>
                 </Switch>
         </App>
